@@ -1,14 +1,15 @@
-import { CircularProgress, Grid } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import PokemonCard from "../components/Cards/PokemonCard";
-import { IMAGE_API_URL, POKEMON_API_URL } from "../config";
+import PokemonCard from "../../components/Cards/PokemonCard";
+import { IMAGE_API_URL, POKEMON_API_URL } from "../../config";
+import { StyledGridContainer } from "./styles";
 
 function Pokedex() {
   const [pokemonData, setPokemonData] = useState(null);
   useEffect(() => {
-    axios.get(POKEMON_API_URL + "?limit=800").then((response) => {
+    axios.get(POKEMON_API_URL + "?limit=898").then((response) => {
       if (response.status >= 200 && response.status < 300) {
         const { results } = response.data;
         let newPokemonData = [];
@@ -29,7 +30,7 @@ function Pokedex() {
   return (
     <Box sx={{ mt: 10 }}>
       {pokemonData ? (
-        <Grid container spacing={2}>
+        <StyledGridContainer container spacing={2}>
           {pokemonData.map((pokemon) => {
             return (
               <PokemonCard
@@ -39,9 +40,9 @@ function Pokedex() {
               />
             );
           })}
-        </Grid>
+        </StyledGridContainer>
       ) : (
-        <CircularProgress sx={{ mt: 500 }} />
+        <CircularProgress sx={{ mt: 100, color: "black" }} />
       )}
     </Box>
   );

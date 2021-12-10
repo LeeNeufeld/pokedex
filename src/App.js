@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import Pokedex from "./containers/Pokedex";
+import Pokedex from "./containers/Pokedex/Pokedex";
+import PokemonDetails from "./containers/PokemonDetails/PokemonDetails";
 
 function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Pokedex />} />
-      </Routes>
+      <Route exact path="/" component={Pokedex} />
+      <Route exact path="/pokemon/:id" component={PokemonDetails} />
     </Router>
   );
 }
