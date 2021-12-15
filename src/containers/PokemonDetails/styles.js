@@ -10,6 +10,13 @@ export const StyledBox = styled(Box)({
   borderRadius: 5,
   paddingTop: 30,
 });
+export const StyledMoveBox = styled(Box)({
+  backgroundColor: "black",
+  color: "white",
+  textAlign: "center",
+  borderRadius: 5,
+  padding: 30,
+});
 export const StyledTitle = styled(Typography)({
   textTransform: "uppercase",
   fontFamily: "fantasy",
@@ -34,6 +41,14 @@ export const StyledFavButton = styled(Button)({
 });
 export const StyledText = styled(Typography)({
   fontSize: 30,
+  textTransform: "capitalize",
+});
+export const StyledMoveTitle = styled(Typography)({
+  fontSize: 20,
+  textTransform: "capitalize",
+});
+export const StyledMoveLevel = styled(Typography)({
+  fontSize: 20,
   textTransform: "capitalize",
 });
 export const StyledSpan = styled("span")({
