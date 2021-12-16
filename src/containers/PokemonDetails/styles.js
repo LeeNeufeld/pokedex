@@ -22,8 +22,8 @@ export const StyledTitle = styled(Typography)({
   fontFamily: "fantasy",
 });
 export const StyledPokemonImage = styled("img")({
-  width: "350px",
-  height: "350px",
+  width: "400px",
+  height: "400px",
 });
 export const StyledPokemonInfoContainer = styled(Box)({
   bottom: 60,

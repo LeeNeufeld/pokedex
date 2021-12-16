@@ -14,7 +14,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <Router>
           <NavBar />
-          <Route exact path="/" component={Pokedex} />
+          <Route exact path="/pokedex" component={Pokedex} />
           <Route exact path="/pokemon/:id" component={PokemonDetails} />
           <Route exact path="/favourites" component={Favourites} />
         </Router>

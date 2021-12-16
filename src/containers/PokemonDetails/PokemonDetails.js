@@ -8,7 +8,7 @@ import {
 import { Box } from "@mui/system";
 import axios from "axios";
 import React, { Component } from "react";
-import { POKEMON_API_URL } from "../../config";
+import { OFFICIAL_IMAGE_URL, POKEMON_API_URL } from "../../config";
 import {
   StyledBox,
   StyledFavButton,
@@ -64,12 +64,14 @@ class PokemonDetails extends Component {
 
     if (pokemon) {
       const { name, sprites, height, weight, types, id, moves } = pokemon;
-
+      const image = OFFICIAL_IMAGE_URL + id + ".png";
       return (
         <Box>
           <StyledBox>
             <StyledTitle variant="h1">{name}</StyledTitle>
-            <StyledPokemonImage src={sprites.front_default} />
+            <StyledPokemonImage
+              src={image ? image : sprites.other.home.front_default}
+            />
             <StyledPokemonInfoContainer>
               <StyledHr />
               <Grid container>

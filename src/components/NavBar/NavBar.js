@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <StyledAppBar position="fixed">
       <Toolbar>
-        <StyledLink to="/">
+        <StyledLink to="/pokedex">
           <StyledTitle variant="h6">Pokedex</StyledTitle>
         </StyledLink>
         <StyledLink to="/favourites">
