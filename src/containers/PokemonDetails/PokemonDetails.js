@@ -4,6 +4,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
@@ -59,7 +60,6 @@ class PokemonDetails extends Component {
   }
 
   render() {
-    console.log(this.props.favourites);
     const { pokemon } = this.state;
 
     if (pokemon) {
@@ -126,17 +126,22 @@ class PokemonDetails extends Component {
               </Grid>
             </StyledPokemonInfoContainer>
           </StyledBox>
+
           <StyledMoveBox>
+            <StyledHr />
+            <Typography sx={{ mb: 3, mt: 5 }} variant="h5">
+              Move List
+            </Typography>
             {moves.map((pokemonMove) => {
               const { name } = pokemonMove.move;
               const { level_learned_at } = pokemonMove.version_group_details[0];
 
               return (
-                <Grid sx={{ textAlign: "center" }} container spacing={3}>
-                  <Grid item>
+                <Grid container sx={{ pb: 3 }}>
+                  <Grid item xs={6} sx={{ mb: 1 }}>
                     <StyledMoveTitle>{name}:</StyledMoveTitle>
                   </Grid>
-                  <Grid sx={{ textAlign: "center" }} item>
+                  <Grid xs={6} item sx={{ mb: 1 }}>
                     <StyledMoveLevel>
                       {level_learned_at === 0
                         ? "TM Taught"
